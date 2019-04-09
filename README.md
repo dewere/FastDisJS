@@ -1,4 +1,8 @@
+# FastDisJS
 Very fast Discord.JS command proccessor with anti-spam feature.
+
+# Installation
+Just add 'FastDisJS.js' to root of your bot directory and have fun.
 
 # Usage
 Very basic example:
@@ -6,9 +10,8 @@ Very basic example:
 isSpamOrSentByBot = onMessage(messageReceivedInBotOnMessage, botPrefix, antiSpamCooldownInSeconds, commandCallback);
 ```
 
-**Note:** since v1.1 every command will be lowercase.
+**Note:** since v1.1 every command will be returned lowercase.
 
-Simple, just add 'FastDisJS.js' to root of your bot directory.
 ```js
 const fd = require('./FastDisJS');
 const discord = require('discord.js');
@@ -47,6 +50,14 @@ bot.on('message', msg => {
   }
 });
 ```
+
+To use multiple prefixes you can use arrays, for example:
+```js
+...
+fd.onMessage(msg, ['!', '?'], ...
+```
+
+So, this example will handle "!help" and "?help".
 
 # Showcase
 Command:
