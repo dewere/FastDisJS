@@ -37,14 +37,28 @@ module.exports.onMessage = function(msg, prefix, cooldown, callback) {
   if ((getTime() - _as) < cooldown) return false;
   __AntiSpam[msg.author.id] = getTime();
 
-  // If this is just cat photo or message
-  if (!msg.content.startsWith(prefix)) return true;
+  if (typeof prefix == "string") {
+    // If this is just cat photo or message
+    if (!msg.content.startsWith(prefix)) return true;
 
-  // Parse message (magic)
-  var args = msg.content.slice(prefix.length).trim().split(/ +/g);
-  var command = args.shift();
+    // Parse message (magic)
+    var args = msg.content.slice(prefix.length).trim().split(/ +/g);
+    var command = args.shift();
 
-  // Else use user-provided callable callback
-  callback(msg, command.toLowerCase(), args);
-  return false;
+    // Else use user-provided callable callback
+    callback(msg, command.toLowerCase(), args);
+    return false;
+  } else {
+    for (var pos = 0; pos < prefix.length; pos++) {
+      if (msg.content.startsWith(prefix[pos])) {
+        // Parse message (magic)
+        var args = msg.content.slice(prefix[pos].length).trim().split(/ +/g);
+        var command = args.shift();
+        callback(msg, command.toLowerCase(), args);
+        return false;
+      }
+    }
+  }
+
+  return true;
 }
