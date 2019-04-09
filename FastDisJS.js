@@ -45,6 +45,6 @@ module.exports.onMessage = function(msg, prefix, cooldown, callback) {
   var command = args.shift();
 
   // Else use user-provided callable callback
-  callback(msg, command, args);
+  callback(msg, command.toLowerCase(), args);
   return false;
 }
