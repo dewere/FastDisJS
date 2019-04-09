@@ -73,4 +73,5 @@ Nothing more yet, sorry.
 # Contacts
 
 Discord: V4#9495
+
 Telegram: @ilyaruski
