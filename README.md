@@ -1,6 +1,11 @@
 Very fast Discord.JS command proccessor with anti-spam feature.
 
 # Usage
+Very basic example:
+```js
+isSpamOrSentByBot = onMessage(messageReceivedInBotOnMessage, botPrefix, antiSpamCooldownInSeconds, commandCallback);
+```
+
 Simple, just add 'FastDisJS.js' to root of your bot directory.
 ```js
 const fd = require('./FastDisJS');
@@ -42,5 +47,5 @@ bot.on('message', msg => {
 ```
 
 # Showcase
-(command usage)[https://i.imgur.com/4jLd8qk.png]
-(message)[https://i.imgur.com/292rohI.png]
+!(command usage)[https://i.imgur.com/4jLd8qk.png]
+!(message)[https://i.imgur.com/292rohI.png]
