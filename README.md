@@ -6,6 +6,8 @@ Very basic example:
 isSpamOrSentByBot = onMessage(messageReceivedInBotOnMessage, botPrefix, antiSpamCooldownInSeconds, commandCallback);
 ```
 
+**Note:** since v1.1 every command will be lowercase.
+
 Simple, just add 'FastDisJS.js' to root of your bot directory.
 ```js
 const fd = require('./FastDisJS');
