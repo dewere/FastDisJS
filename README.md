@@ -47,5 +47,5 @@ bot.on('message', msg => {
 ```
 
 # Showcase
-!(command usage)[https://i.imgur.com/4jLd8qk.png]
-!(message)[https://i.imgur.com/292rohI.png]
+![command usage](https://i.imgur.com/4jLd8qk.png)
+![message](https://i.imgur.com/292rohI.png)
