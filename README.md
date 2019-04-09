@@ -48,7 +48,11 @@ bot.on('message', msg => {
 
 # Showcase
 Command:
+
 ![command usage](https://i.imgur.com/4jLd8qk.png)
+
 Message:
+
 ![message](https://i.imgur.com/292rohI.png)
+
 Nothing more yet, sorry.
