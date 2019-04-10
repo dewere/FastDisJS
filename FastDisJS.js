@@ -28,6 +28,29 @@ function getTime() {
   return Date.parse(new Date());
 }
 
+function commandize(cmd, callback) {
+  return {
+    cmd: cmd,
+    eq: function(to, callback) {
+      let temp = this.cmd.toString();
+
+      if (typeof to == "string" && temp == to) {
+      	callback();
+      	return true;
+      }
+
+      for (var pos = 0; pos < to.length; pos ++) {
+        if (temp == to[pos]) {
+        	callback();
+        	return true;
+        }
+      }
+
+      return false;
+    }
+  };
+}
+
 module.exports.onMessage = function(msg, prefix, cooldown, callback) {
   // Just ignore annoying bots :)
   if (msg.author.bot) return false;
@@ -46,7 +69,7 @@ module.exports.onMessage = function(msg, prefix, cooldown, callback) {
     var command = args.shift();
 
     // Else use user-provided callable callback
-    callback(msg, command.toLowerCase(), args);
+    callback(msg, commandize(command.toLowerCase()), args);
     return false;
   } else {
     for (var pos = 0; pos < prefix.length; pos++) {
@@ -54,7 +77,7 @@ module.exports.onMessage = function(msg, prefix, cooldown, callback) {
         // Parse message (magic)
         var args = msg.content.slice(prefix[pos].length).trim().split(/ +/g);
         var command = args.shift();
-        callback(msg, command.toLowerCase(), args);
+        callback(msg, commandize(command.toLowerCase()), args);
         return false;
       }
     }
