@@ -1,7 +1,8 @@
 # FastDisJS
 Very fast Discord.JS command proccessor with anti-spam feature.
-![license MIT](img.shields.io/static/v1.svg?label=License&message=MIT&color=EE3456)
-![speed fast](img.shields.io/static/v1.svg?label=Speed&message=FAST&color=3456EE)
+
+![license MIT](http://img.shields.io/static/v1.svg?label=License&message=MIT&color=EE3456)
+![speed fast](http://img.shields.io/static/v1.svg?label=Speed&message=FAST&color=3456EE)
 
 # Installation
 Just add 'FastDisJS.js' to root of your bot directory and have fun.
