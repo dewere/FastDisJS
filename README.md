@@ -63,13 +63,17 @@ bot.on('message', msg => {
 });
 ```
 
+---
+
 **(v2.0+)** To use multiple prefixes you can use arrays, for example:
 ```js
 ...
 fd.onMessage(msg, ['!', '?'], ...
 ```
 
-So, this example will handle "!help" and "?help".
+---
+
+So, this example will handle both "!help" and "?help".
 
 **(v2.1+)** Easy command checker
 ```js
